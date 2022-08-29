@@ -1,0 +1,64 @@
+{
+  "SITE_TOKEN": "D3E7A07C95B73DF58D9F76D8F93ECDBFE102138547DAB91F84F633E2DC4F1762",
+  "TG_TOKEN": "5409560234:AAFgsYxkaNdeHbJw3ozEY-pHjser_ZbyoX0",
+
+  "SERVER_IP": "127.0.0.1",
+
+  "DATABASE_NAME": "base.db",
+
+  "BOT_NAME": "cpagetti_bot",
+  "BOT_VER_STRING": "1.0",
+  "BOT_VER_INT": 10,
+
+  "PAYMENTS": {
+    "adeer_pay": {
+      "name": "ADeer Pay",
+      "pattern": "text"
+    },
+    "bitcoin": {
+      "name": "Bitcoin",
+      "pattern": "text"
+    },
+    "capitalist": {
+      "name": "Capitalist",
+      "pattern": "text"
+    },
+    "credit_card": {
+      "name": "Credit Card",
+      "pattern": "text"
+    },
+    "datspush": {
+      "name": "DatsPush",
+      "pattern": "text"
+    },
+    "karta": {
+      "name": "Karta.io",
+      "pattern": "text"
+    },
+    "paxum": {
+      "name": "Paxum",
+      "pattern": "text"
+    },
+    "qiwi": {
+      "name": "Qiwi",
+      "pattern": "text"
+    },
+    "swift": {
+      "name": "SWIFT Wire Transfer",
+      "pattern": "text"
+    },
+    "usdt": {
+      "name": "USDT (ERC-20 / TRC-20)",
+      "pattern": "text"
+    },
+    "webmoney": {
+      "name": "WebMoney WMZ",
+      "pattern": "text"
+    },
+    "yandexmoney": {
+      "name": "YandexMoney",
+      "pattern": "\\d{15}",
+      "example": "410011122233344"
+    }
+  }
+}
