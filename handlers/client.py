@@ -272,29 +272,29 @@ async def command_show_instruction(callback: types.CallbackQuery):
         instructions = await utils.getInstructions()
 
         data = json.loads(callback.data)
-        msg_list = instructions['data'][int(data['id'])]
+        msg = instructions['data'][int(data['id'])]
 
-        if 'data' not in msg_list:
-            console.printError('command_show_instruction(): Message is empty!')
-            await bot.send_message(callback.from_user.id, _('Произошла ошибка...'))
-            return
+        # if 'data' not in msg_list:
+        #     console.printError('command_show_instruction(): Message is empty!')
+        #     await bot.send_message(callback.from_user.id, _('Произошла ошибка...'))
+        #     return
 
-        for msg in msg_list['data']:
-            if 'media' in msg:
-                # gen_msg = [success(bool), type(string), message(InputMedia|string)]
-                gen_msg = await admin.serv_generateMessage(msg['media'])
+        # msg
+        if 'photo' in msg and msg['photo'] or 'video' in msg and msg['video'] or 'document' in msg and msg['document'] or 'animation' in msg and msg['animation']:
+            # gen_msg = [success(bool), type(string), message(InputMedia|string)]
+            gen_msg = await admin.serv_generateMessage1(msg)
 
-                if gen_msg[0] is True:
-                    if 'text' in msg:
-                        gen_msg[2][0]['caption'] = msg['text']
-                    gen_msg[2][0]['parse_mode'] = 'Markdown'
-                    await admin.sendMessage(callback.from_user.id, gen_msg[1], gen_msg[2])
-                else:
-                    console.printWarning('command_show_instruction(): ParseError: {}'.format(msg))
-            elif 'text' in msg:
-                await admin.sendMessage(callback.from_user.id, 'text', msg['text'])
+            if gen_msg[0] is True:
+                if 'text' in msg:
+                    gen_msg[2][0]['caption'] = msg['text']
+                gen_msg[2][0]['parse_mode'] = 'Markdown'
+                await admin.sendMessage(callback.from_user.id, gen_msg[1], gen_msg[2])
             else:
                 console.printWarning('command_show_instruction(): ParseError: {}'.format(msg))
+        elif 'text' in msg:
+            await admin.sendMessage(callback.from_user.id, 'text', msg['text'])
+        else:
+            console.printWarning('command_show_instruction(): ParseError: {}'.format(msg))
 
 
 # ================ КОНТАКТЫ ================ #

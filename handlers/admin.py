@@ -10,6 +10,8 @@ import caption
 import messages
 import aioschedule
 import re
+from create_bot import _
+
 
 class FSMAdmin(StatesGroup):
     token = State()
@@ -227,6 +229,7 @@ async def sendMessageAll(users, type, message):
 
     return [True]
 
+
 async def serv_generateMessage(msg_data):
     type = None
     media = []
@@ -258,6 +261,42 @@ async def serv_generateMessage(msg_data):
         return [True, type, caption]
 
     return [False]
+
+
+async def serv_generateMessage1(msg_data):
+    type = None
+    media = []
+    caption = None
+
+    for group in msg_data:
+        if group == 'text':
+            caption = msg_data[group]
+            type = 'text'
+        elif group == 'title':
+            pass
+        else:
+            for file in msg_data[group]:
+                if group == 'photo':
+                    media.append(types.InputMediaPhoto(file))
+                elif group == 'video':
+                    media.append(types.InputMediaVideo(file))
+                elif group == 'document':
+                    media.append(types.InputMediaDocument(file))
+                elif group == 'animation':
+                    media.append(types.InputMediaVideo(file))
+                else:
+                    console.printWarning(f"serv_generateMessage(): unknown type '{group}'")
+
+    if len(media):
+        type = 'group'
+        if caption is not None:
+            media[0]['caption'] = caption
+        return [True, type, media]
+    elif caption is not None:
+        return [True, type, caption]
+
+    return [False]
+
 
 async def serv_sendMessage(users, data):
     if data is None:

@@ -76,6 +76,7 @@ async def get_main_menu(telegram_id):
     menu.row(*btn1).row(*btn2)
     return menu
 
+
 async def get_instructions():
     menu = types.InlineKeyboardMarkup(row_width=1)
     instructions = await utils.getInstructions()
@@ -88,6 +89,7 @@ async def get_instructions():
         menu.add(btn)
     return menu
 
+
 async def get_contacts():
     menu = types.InlineKeyboardMarkup(row_width=1)
     contacts = await utils.getContacts()
@@ -99,6 +101,7 @@ async def get_contacts():
         btn = InlineKeyboardButton(btn['title'], callback_data='{"action":"show_contacts","id":"' + str(x) + '"}')
         menu.add(btn)
     return menu
+
 
 async def currency_balance(balance):
     menu = types.InlineKeyboardMarkup(row_width=1)

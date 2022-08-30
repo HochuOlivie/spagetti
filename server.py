@@ -14,9 +14,9 @@ async def generateResponse(success, status, response=None, message=''):
     res['status'] = status
 
     if success is True:
-        res['success'] = 'true'
+        res['success'] = True
     else:
-        res['success'] = 'false'
+        res['success'] = False
 
     if message is not None and len(message) > 0:
         res['message'] = message
@@ -28,10 +28,12 @@ async def generateResponse(success, status, response=None, message=''):
 
     return json.dumps(res)
 
+
 async def server_send(msg, writer):
     writer.write(msg.encode())
     await writer.drain()
     writer.close()
+
 
 async def server_processor(reader, writer):
     message = ''
