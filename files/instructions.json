@@ -7,16 +7,11 @@
         "photo": [
           "https://klike.net/uploads/posts/2018-10/1539499416_1.jpg",
           "https://tn.fishki.net/20/upload/post/2018/07/03/2641643/tn/05ce47bd2cc6d26521e8f3a363ab5307.png"
-        ],
-        "video": [
         ]
       },
       {
         "title": "Демо 2",
-        "text": "Описание 2",
-        "photo": [],
-        "video": [
-        ]
+        "text": "Описание 2"
       }
     ]
 }

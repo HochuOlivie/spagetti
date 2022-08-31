@@ -2,6 +2,8 @@ import json
 import console
 
 instructions = None
+
+
 async def getInstructions():
     global instructions
     if instructions is not None:
@@ -11,6 +13,7 @@ async def getInstructions():
         instructions = json.load(file)
 
     return instructions
+
 
 async def updateInstructions(data):
     global instructions
@@ -31,14 +34,13 @@ async def updateInstructions(data):
                 if 'title' not in item_list:
                     console.printError('updateInstructions(): There is no title for the instructions')
                     return [False, 'There is no title for the instructions!']
-                if 'data' not in item_list:
+                if ('text' not in item_list and not
+                        ('photo' in item_list
+                         or 'video' in item_list
+                         or 'document' in item_list
+                         or 'animation' in item_list)):
                     console.printError('updateInstructions(): There is no basic content')
                     return [False, 'There is no basic content!']
-
-                for item in item_list['data']:
-                    if 'text' not in item and 'media' not in item:
-                        console.printError('updateInstructions(): There is no basic content')
-                        return [False, 'There is no basic content!']
 
         instructions = data
         with open('./files/instructions.json', 'w') as file:
@@ -49,7 +51,10 @@ async def updateInstructions(data):
 
     return [True]
 
+
 contacts = None
+
+
 async def getContacts():
     global contacts
     if contacts is not None:
@@ -59,6 +64,7 @@ async def getContacts():
         contacts = json.load(file)
 
     return contacts
+
 
 async def updateContacts(data):
     global contacts
