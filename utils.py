@@ -94,8 +94,6 @@ async def updateContacts(data):
     return [True]
 
 
-from googletrans import Translator
-
 
 def _(text, lang):
     print(text)
