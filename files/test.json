@@ -1,0 +1,19 @@
+{
+  "action": "updateInstructions",
+  "token": "D3E7A07C95B73DF58D9F76D8F93ECDBFE102138547DAB91F84F633E2DC4F1762",
+  "text": "Новая инструкция Tuesday 23rd of August 2022 03:53:21 PM",
+    "data": [
+      {
+        "title": "Демо 1",
+        "text": "Описание 1",
+        "photo": [
+          "https://klike.net/uploads/posts/2018-10/1539499416_1.jpg",
+          "https://tn.fishki.net/20/upload/post/2018/07/03/2641643/tn/05ce47bd2cc6d26521e8f3a363ab5307.png"
+        ]
+      },
+      {
+        "title": "Демо 2",
+        "text": "Описание 2"
+      }
+    ]
+}
