@@ -20,7 +20,7 @@ msgstr ""
 
 #: caption.py:4
 msgid "⚿ Ввести API Token"
-msgstr ""
+msgstr "Enter API Token"
 
 #: caption.py:5
 msgid "➡️ Продолжить без API"

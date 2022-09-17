@@ -425,5 +425,5 @@ def register_handlers():
     dp.register_callback_query_handler(command_show_instruction, text_contains='{"action":"show_instruction"')
     dp.register_message_handler(command_contacts, text=[_(caption.contacts, locale='en'), _(caption.contacts, locale='ru')])
     dp.register_callback_query_handler(command_show_contacts, text_contains='{"action":"show_contacts"')
-    dp.register_message_handler(show_notifications, text=[_(caption.instructions, locale='en'), _(caption.instructions, locale='ru')])
+    dp.register_message_handler(show_notifications, text=[_(caption.notifications   , locale='en'), _(caption.notifications, locale='ru')])
     dp.register_callback_query_handler(command_toggle_notification, text_contains='{"action":"notification"')
