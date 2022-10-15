@@ -286,8 +286,8 @@ async def command_show_instruction(callback: types.CallbackQuery):
 
             if gen_msg[0] is True:
                 if 'text' in msg:
-                    gen_msg[2][0]['caption'] = msg['text']
-                gen_msg[2][0]['parse_mode'] = 'Markdown'
+                    gen_msg[2][0]['caption'] = re.sub(r'</?(span|p|sub|sup|blockquote|br|ol|li|ul)[^>]*>', '', msg['text'])
+                gen_msg[2][0]['parse_mode'] = 'HTML'
                 await admin.sendMessage(callback.from_user.id, gen_msg[1], gen_msg[2])
             else:
                 console.printWarning('command_show_instruction(): ParseError: {}'.format(msg))
@@ -340,7 +340,8 @@ async def command_show_contacts(callback: types.CallbackQuery):
 
 async def command_logout(callback: types.CallbackQuery):
     await database.removeUserByTelegramId(callback.from_user.id)
-    await go_auth(callback.from_user.id)
+    await bot.send_message(callback.from_user.id, 'Выберите язык/Choose language',
+                           reply_markup=keyboards.choose_lang_keyboard)
 
 
 async def command_russian(message: types.Message):

@@ -1,17 +1,22 @@
 {
-    "text": "Новая инструкция Tuesday 23rd of August 2022 03:53:21 PM",
-    "data": [
-      {
-        "title": "Демо 1",
-        "text": "Описание 1",
-        "photo": [
-          "https://klike.net/uploads/posts/2018-10/1539499416_1.jpg",
-          "https://tn.fishki.net/20/upload/post/2018/07/03/2641643/tn/05ce47bd2cc6d26521e8f3a363ab5307.png"
-        ]
-      },
-      {
-        "title": "Демо 2",
-        "text": "Описание 2"
-      }
-    ]
+  "data": [
+    {
+      "title": "\u041a\u0430\u043a \u043b\u0438\u0442\u044c \u0447\u0435\u0440\u0435\u0437 Keitaro",
+      "text": "<p>https://translate.google.com/</p>",
+      "photo": [
+        "https://avatars.mds.yandex.net/get-ott/2419418/2a00000176b504f7b21a59cf68e306109ae8/1344x756"
+      ],
+      "video": [
+      ]
+    },
+    {
+      "title": "\u0427\u0442\u043e \u0442\u0430\u043a\u043e\u0435 \u041f\u041f?",
+      "text": "<p><strong>\u0411\u043e\u043b\u0435\u0435 \u043f\u043e\u0434\u0440\u043e\u0431\u043d\u043e - </strong>http://cpagetti.com/</p>",
+      "photo": [
+      ],
+      "video": [
+      ]
+    }
+  ],
+  "text": "\u0418\u043d\u0441\u0442\u0440\u0443\u043a\u0446\u0438\u0438"
 }

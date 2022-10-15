@@ -26,7 +26,10 @@ async def getRequest(telegram_id, request, params=None):
             get_params = f"{get_params}&{key}={params[key]}"
 
     # Отправляем запрос
-    r = requests.get(f"https://api.cpagetti.com/wm/{request}?token={token}{get_params}");
+    if request == 'offers':
+        r = requests.get(f"https://api.cpagetti.com/v2/wm/telegram-offers?token={token}{get_params}")
+    else:
+        r = requests.get(f"https://api.cpagetti.com/wm/{request}?token={token}{get_params}")
 
     if r.status_code != 200:
         console.printWarning(f"Server response error. {r.text}")
