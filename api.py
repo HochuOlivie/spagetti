@@ -57,7 +57,7 @@ async def getNews(telegram_id, offset=0, limit=100):
     return res['response']
 
 async def getStats(telegram_id, currency):
-    res = await getRequest(telegram_id, 'stats', {"currency":currency})
+    res = await getRequest(telegram_id, 'stats', {"currency": currency})
     if res is None:
         return res
     return res['response']

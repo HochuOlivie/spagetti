@@ -11,6 +11,8 @@ import re
 import caption
 import sys
 from importlib import reload
+from datetime import datetime
+from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 
 async def go_auth(telegram_id):
@@ -83,45 +85,67 @@ async def command_show_stats(callback: types.CallbackQuery):
     await bot.send_message(callback.from_user.id, _("В какой валюте льешь траф?"), reply_markup=keyboards.stats_keyboard)
 
 async def command_show_stats_rub(callback: types.CallbackQuery):
+    await callback.message.edit_text(callback.message.text)
     if callback.data and callback.data.startswith('{"action":"stats"'):
+        print(callback.data)
         data = json.loads(callback.data)
+        if 'offset' in data:
+            offset = int(data['offset'])
+        else:
+            offset = 0
         stats_list = await api.getStats(callback.from_user.id, data["currency"])
-        found = False
+        stats_list = sorted(stats_list, key=lambda x: datetime.strptime(x['date'], '%Y-%m-%d'), reverse=True)[offset:]
+        # found = False
+        msg_arr = []
+        last_date = None
         for stats_item in stats_list:
+            print(stats_item)
+            offset += 1
+            curr_date = stats_item['date']
             if stats_item['leadsTotal'] is None:
                 #await bot.send_message(callback.from_user.id, f"Дата: {stats_item['date']}\nНет данных")
                 continue
-
-            fount = True
-            aprove = round(float(stats_item['ratioApprove']) * 100, 2);
-            await bot.send_message(callback.from_user.id, _('''
+            if last_date is None:
+                last_date = curr_date
+            if curr_date != last_date:
+                break
+            aprove = round(float(stats_item['ratioApprove']) * 100, 2)
+            msg_arr.append(_('''
+Дата: {}
 Всего лидов: {}
 Валидные: {}
 В работе: {}
 Невалидные: {}
 Подтвержденные: {}
 Отклонено: {}
-
 Треш: {}
+
+Финансы:
 В работе: {}
 Подтвержденные: {}
 Отклонено: {}
 Апрув: {}%
-
-Дата: {}
-            '''.format(stats_item['leadsTotal'], stats_item['leadsValidUser'], stats_item['leadsValid'],
+            '''.format(stats_item['date'], stats_item['leadsTotal'], stats_item['leadsValidUser'], stats_item['leadsValid'],
                        stats_item['leadsInvalid'], stats_item['leadsConfirmed'],
                        stats_item['leadsDeclined'],
                        stats_item['leadsTrash'],
                        stats_item['salaryValid'],
                        stats_item['salaryConfirmed'],
                        stats_item['salaryDeclined'],
-                       aprove,
-                       stats_item['date'])))
-        if found is False:
-            await bot.send_message(callback.from_user.id, _("Нет данных"))
+                       aprove
+                       )))
+        for msg_id in range(len(msg_arr) - 1):
+            await bot.send_message(callback.from_user.id, msg_arr[msg_id])
+        print(msg_arr)
+        print(msg_arr[-1])
+        await bot.send_message(callback.from_user.id, msg_arr[len(msg_arr) - 1], reply_markup=InlineKeyboardMarkup().add(
+            InlineKeyboardButton('Показать еще', callback_data='{"action":"stats","offset":"' + str(offset) + '","currency":"' + data["currency"] + '"}'
+        )))
+        # if found is False:
+        #     await bot.send_message(callback.from_user.id, _("Нет данных"))
     else:
         await bot.send_message(callback.from_user.id, _('Произошла ошибка'))
+
 
 # ================ ОФФЕРЫ ================ #
 async def command_show_offers(callback: types.CallbackQuery):
@@ -158,6 +182,8 @@ URL: https://cpagetti.com/offer/view/{}
                 await bot.send_photo(callback.from_user.id, offers[id]['logo'], msg, parse_mode="HTML", reply_markup=markup)
     else:
         await bot.send_message(callback.from_user.id, _('Произошла ошибка'))
+
+
 # ================ ПОТОКИ ================ #
 async def command_show_streams(callback: types.CallbackQuery):
     if callback.data and callback.data.startswith('{"action":"streams"'):
