@@ -11,7 +11,7 @@ import re
 import caption
 import sys
 from importlib import reload
-from datetime import datetime
+from datetime import datetime, timedelta
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 
@@ -87,7 +87,6 @@ async def command_show_stats(callback: types.CallbackQuery):
 async def command_show_stats_rub(callback: types.CallbackQuery):
     await callback.message.edit_text(callback.message.text)
     if callback.data and callback.data.startswith('{"action":"stats"'):
-        print(callback.data)
         data = json.loads(callback.data)
         if 'offset' in data:
             offset = int(data['offset'])
@@ -97,17 +96,21 @@ async def command_show_stats_rub(callback: types.CallbackQuery):
         stats_list = sorted(stats_list, key=lambda x: datetime.strptime(x['date'], '%Y-%m-%d'), reverse=True)[offset:]
         # found = False
         msg_arr = []
-        last_date = None
+        if offset == 0:
+            last_date = datetime.now() - timedelta(days=6)
+        else:
+            try:
+                last_date = datetime.strptime(stats_list[offset - 1]['date'], '%Y-%m-%d')
+            except:
+                await bot.send_message(callback.from_user.id, 'Нет данных')
+                return
         for stats_item in stats_list:
-            print(stats_item)
             offset += 1
-            curr_date = stats_item['date']
+            curr_date = datetime.strptime(stats_item['date'], '%Y-%m-%d')
             if stats_item['leadsTotal'] is None:
                 #await bot.send_message(callback.from_user.id, f"Дата: {stats_item['date']}\nНет данных")
                 continue
-            if last_date is None:
-                last_date = curr_date
-            if curr_date != last_date:
+            if curr_date <= last_date:
                 break
             aprove = round(float(stats_item['ratioApprove']) * 100, 2)
             msg_arr.append(_('''
