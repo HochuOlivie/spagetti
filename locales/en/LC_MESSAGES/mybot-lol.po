@@ -19,32 +19,32 @@ msgstr ""
 "Generated-By: Babel 2.9.1\n"
 
 #: caption.py:4
-msgid "➡️ Ввести API Token"
-msgstr "➡️ Enter API Token"
+msgid "⚿ Ввести API Token"
+msgstr "Enter API Token"
 
 #: caption.py:5
 msgid "➡️ Продолжить без API"
-msgstr "➡️ Continue without API"
+msgstr ""
 
 #: caption.py:7
 msgid "🧰 Мой Аккаунт"
-msgstr "🧰 My account"
+msgstr ""
 
 #: caption.py:8
 msgid "ℹ️ Инструкции"
-msgstr "ℹ️ Instructions"
+msgstr ""
 
 #: caption.py:9
 msgid "💡 Уведомления"
-msgstr "💡 Notifications"
+msgstr ""
 
 #: caption.py:10
 msgid "📝 Контакты"
-msgstr "📝 Contacts"
+msgstr ""
 
 #: caption.py:11
 msgid "🔑 Авторизация"
-msgstr "🔑 Login"
+msgstr ""
 
 #: caption.py:13
 msgid "Баланс"
@@ -56,55 +56,55 @@ msgstr "News"
 
 #: caption.py:15
 msgid "Статистика"
-msgstr "Statistics"
+msgstr ""
 
 #: caption.py:16
 msgid "TOP офферов"
-msgstr "TOP offers"
+msgstr ""
 
 #: caption.py:17
 msgid "Потоки"
-msgstr "Streams"
+msgstr ""
 
 #: caption.py:18
 msgid "Выплаты"
-msgstr "Payouts"
+msgstr ""
 
 #: caption.py:19
 msgid "Выход из аккаунта"
-msgstr "Logout"
+msgstr ""
 
 #: caption.py:23
 msgid "RUB"
-msgstr "RUB"
+msgstr ""
 
 #: caption.py:24
 msgid "USD"
-msgstr "USD"
+msgstr ""
 
 #: caption.py:27
 msgid "Оповещение о тикетах"
-msgstr "Ticket notification"
+msgstr ""
 
 #: caption.py:28
 msgid "О выплатах"
-msgstr "About payouts"
+msgstr ""
 
 #: caption.py:29
 msgid "Оповещение о новых лидах"
-msgstr "New lead"
+msgstr ""
 
 #: messages.py:4
-msgid "/cancel - отмена операции"
-msgstr "/cancel - cancel operation"
+msgid "/cancel - Отмена операции"
+msgstr ""
 
 #: messages.py:5
 msgid "Операция отменена"
-msgstr "Operation canceled"
+msgstr ""
 
 #: messages.py:6
-msgid "Произошла ошибка"
-msgstr "An error has occurred"
+msgid "Проиошла ошибка"
+msgstr ""
 
 #: messages.py:9
 msgid "Выберите из какого счет хотите вывести средства:"
@@ -190,12 +190,12 @@ msgstr "You are not authorized!"
 
 #: handlers/client.py:27
 msgid "Управление вашим аккаунтом"
-msgstr "Managing your account"
+msgstr ""
 
 #: handlers/client.py:34 handlers/client.py:73 handlers/client.py:118
 #: handlers/client.py:154 handlers/client.py:186 handlers/client.py:217
 msgid "Произошла ошибка"
-msgstr "An error has occurred"
+msgstr ""
 
 #: handlers/client.py:41
 msgid ""
@@ -203,7 +203,7 @@ msgid ""
 "Ваш баланс:\n"
 "{}: {}\n"
 "{}: {}\n"
-msgstr "Your balance"
+msgstr ""
 
 #: handlers/client.py:58
 msgid ""
@@ -218,11 +218,11 @@ msgstr ""
 
 #: handlers/client.py:68
 msgid "Показать еще"
-msgstr "Show more"
+msgstr ""
 
 #: handlers/client.py:77
 msgid "В какой валюте льешь траф?"
-msgstr "In what currency do you send traffic?"
+msgstr ""
 
 #: handlers/client.py:106
 msgid ""
@@ -246,15 +246,15 @@ msgstr ""
 
 #: handlers/client.py:116
 msgid "Нет данных"
-msgstr "No data"
+msgstr ""
 
 #: handlers/client.py:128
 msgid "Всего {} офферов!"
-msgstr "Total {} of offers!"
+msgstr ""
 
 #: handlers/client.py:138 handlers/client.py:173 handlers/client.py:205
 msgid "Показать еще ({})"
-msgstr "Show more ({})"
+msgstr ""
 
 #: handlers/client.py:147
 msgid ""
@@ -268,7 +268,7 @@ msgstr ""
 
 #: handlers/client.py:163
 msgid "Всего {} потоков!"
-msgstr "Total {} threads!"
+msgstr ""
 
 #: handlers/client.py:184
 msgid ""
@@ -283,7 +283,7 @@ msgstr ""
 
 #: handlers/client.py:195
 msgid "Всего {} выплат!"
-msgstr "Total {} payouts!"
+msgstr ""
 
 #: handlers/client.py:213
 msgid ""
@@ -297,11 +297,11 @@ msgstr ""
 
 #: handlers/client.py:242
 msgid "Уведомлять меня о следующих событиях:"
-msgstr "Notify me of the following events:"
+msgstr ""
 
 #: handlers/client.py:270 handlers/client.py:310
 msgid "Произошла ошибка..."
-msgstr "An error has occurred..."
+msgstr ""
 
 #~ msgid ""
 #~ "👋 Hello {}. Я - твой помощник "
