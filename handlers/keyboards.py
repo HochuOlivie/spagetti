@@ -65,16 +65,15 @@ async def get_notifications(telegram_id):
     return menu
 
 
-async def get_main_menu(telegram_id, locale=None):
-
+async def get_main_menu(telegram_id):
     menu = types.ReplyKeyboardMarkup(resize_keyboard=True)
 
     if await database.checkUserByTelegramId(telegram_id):
-        btn1 = [_(caption.my_account, locale=locale), _(caption.instructions, locale=locale)]
-        btn2 = [_(caption.notifications, locale=locale), _(caption.contacts, locale=locale)]
+        btn1 = [_(caption.my_account), _(caption.instructions)]
+        btn2 = [_(caption.notifications), _(caption.contacts)]
     else:
-        btn1 = [_(caption.contacts, locale=locale), _(caption.instructions, locale=locale)]
-        btn2 = [_(caption.auth, locale=locale)]
+        btn1 = [_(caption.contacts), _(caption.instructions)]
+        btn2 = [_(caption.auth)]
 
     menu.row(*btn1).row(*btn2)
     return menu

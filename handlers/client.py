@@ -408,7 +408,16 @@ async def greetings(message: types.Message):
         token = await database.getTokenByTelegramId(message.from_user.id)
         profile = await api.checkToken(token)
         if profile is not None:
-            menu = await keyboards.get_main_menu(message.from_user.id, locale='ru')
+            menu = types.ReplyKeyboardMarkup(resize_keyboard=True)
+
+            if await database.checkUserByTelegramId(message.from_user.id):
+                btn1 = ['🧰 Мой аккаунт', 'ℹ️ Инструкции']
+                btn2 = ['💡 Уведомления', "📝 Контакты"]
+            else:
+                btn1 = ["📝 Контакты", 'ℹ️ Instructions']
+                btn2 = ["🔑 Авторизация"]
+
+            menu.row(*btn1).row(*btn2)
             await bot.send_message(message.from_user.id,
                                    "👋 Приветствую {}. Я - твой помощник Сэр Макарон 🧐. Здесь вы можете управлять данными в своем кабинете!".format(
                                        profile['firstName']), reply_markup=menu)
@@ -430,7 +439,16 @@ async def greetings_eng(message: types.Message):
         token = await database.getTokenByTelegramId(message.from_user.id)
         profile = await api.checkToken(token)
         if profile is not None:
-            menu = await keyboards.get_main_menu(message.from_user.id, locale='en')
+            menu = types.ReplyKeyboardMarkup(resize_keyboard=True)
+
+            if await database.checkUserByTelegramId(message.from_user.id):
+                btn1 = ['🧰 My account', 'ℹ️ Instructions']
+                btn2 = ['💡 Notifications', "📝 Контакты"]
+            else:
+                btn1 = ["📝 Контакты", 'ℹ️ Instructions']
+                btn2 = ["🔑 Login"]
+
+            menu.row(*btn1).row(*btn2)
             await bot.send_message(message.from_user.id,
                                    "👋 Greetings {}. I am your assistant Sir Macaron 🧐. You can manage data in your account!".format(
                                        profile['firstName']), reply_markup=menu)
