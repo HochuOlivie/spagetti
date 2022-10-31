@@ -49,6 +49,7 @@ async def command_show_balance(callback: types.CallbackQuery):
 
 # ================ НОВОСТИ ================ #
 async def command_show_news(callback: types.CallbackQuery):
+    reload(keyboards)
     if callback.data and callback.data.startswith('{"action":"news"'):
         limit = 5
         data = json.loads(callback.data)
@@ -85,6 +86,7 @@ async def command_show_stats(callback: types.CallbackQuery):
     await bot.send_message(callback.from_user.id, _("В какой валюте льешь траф?"), reply_markup=keyboards.stats_keyboard)
 
 async def command_show_stats_rub(callback: types.CallbackQuery):
+    reload(keyboards)
     await callback.message.edit_text(callback.message.text)
     if callback.data and callback.data.startswith('{"action":"stats"'):
         data = json.loads(callback.data)
@@ -152,6 +154,7 @@ async def command_show_stats_rub(callback: types.CallbackQuery):
 
 # ================ ОФФЕРЫ ================ #
 async def command_show_offers(callback: types.CallbackQuery):
+    reload(keyboards)
     if callback.data and callback.data.startswith('{"action":"offers"'):
         data = json.loads(callback.data)
         limit = 5
@@ -189,6 +192,7 @@ URL: https://cpagetti.com/offer/view/{}
 
 # ================ ПОТОКИ ================ #
 async def command_show_streams(callback: types.CallbackQuery):
+    reload(keyboards)
     if callback.data and callback.data.startswith('{"action":"streams"'):
         data = json.loads(callback.data)
         limit = 5
@@ -219,8 +223,10 @@ URL: {}
             '''.format(item['createdAt'], item['name'], item['offerId'], item['offerName'], link)), reply_markup=markup)
     else:
         await bot.send_message(callback.from_user.id, _('Произошла ошибка'))
+
 # ================ ВЫПЛАТЫ ================ #
 async def command_show_payouts(callback: types.CallbackQuery):
+    reload(keyboards)
     if callback.data and callback.data.startswith('{"action":"payouts"'):
         data = json.loads(callback.data)
         limit = 5
@@ -297,6 +303,7 @@ async def command_instructions(message: types.Message):
 
 
 async def command_show_instruction(callback: types.CallbackQuery):
+    reload(keyboards)
     if callback.data and callback.data.startswith('{"action":"show_instruction"'):
         instructions = await utils.getInstructions()
 
@@ -338,6 +345,7 @@ async def command_contacts(message: types.Message):
 
 
 async def command_show_contacts(callback: types.CallbackQuery):
+    reload(keyboards)
     if callback.data and callback.data.startswith('{"action":"show_instruction"'):
         contacts = await utils.getContacts()
 
@@ -368,6 +376,7 @@ async def command_show_contacts(callback: types.CallbackQuery):
 
 
 async def command_logout(callback: types.CallbackQuery):
+    reload(keyboards)
     await database.removeUserByTelegramId(callback.from_user.id)
     await bot.send_message(callback.from_user.id, 'Выберите язык/Choose language',
                            reply_markup=keyboards.choose_lang_keyboard)
