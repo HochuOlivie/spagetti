@@ -6,6 +6,7 @@ import database
 import utils
 import caption
 from importlib import reload
+from create_bot import _
 
 reload(caption)
 
@@ -67,11 +68,11 @@ async def get_main_menu(telegram_id):
     menu = types.ReplyKeyboardMarkup(resize_keyboard=True)
 
     if await database.checkUserByTelegramId(telegram_id):
-        btn1 = [caption.my_account, caption.instructions]
-        btn2 = [caption.notifications, caption.contacts]
+        btn1 = [_(caption.my_account), _(caption.instructions)]
+        btn2 = [_(caption.notifications), _(caption.contacts)]
     else:
-        btn1 = [caption.contacts, caption.instructions]
-        btn2 = [caption.auth]
+        btn1 = [_(caption.contacts), _(caption.instructions)]
+        btn2 = [_(caption.auth)]
 
     menu.row(*btn1).row(*btn2)
     return menu
