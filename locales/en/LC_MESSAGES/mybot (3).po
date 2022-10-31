@@ -1,0 +1,336 @@
+# English translations for PROJECT.
+# Copyright (C) 2022 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2022-08-29 22:38+0500\n"
+"PO-Revision-Date: 2022-08-29 20:13+0500\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: caption.py:4
+msgid "➡️ Ввести API Token"
+msgstr "➡️ Enter API Token"
+
+#: caption.py:5
+msgid "➡️ Продолжить без API"
+msgstr "➡️ Continue without API"
+
+#: caption.py:7
+msgid "🧰 Мой Аккаунт"
+msgstr "🧰 My account"
+
+#: caption.py:8
+msgid "ℹ️ Инструкции"
+msgstr "ℹ️ Instructions"
+
+#: caption.py:9
+msgid "💡 Уведомления"
+msgstr "💡 Notifications"
+
+#: caption.py:10
+msgid "📝 Контакты"
+msgstr "📝 Contacts"
+
+#: caption.py:11
+msgid "🔑 Авторизация"
+msgstr "🔑 Login"
+
+#: caption.py:13
+msgid "Баланс"
+msgstr "Balance"
+
+#: caption.py:14 caption.py:26
+msgid "Новости"
+msgstr "News"
+
+#: caption.py:15
+msgid "Статистика"
+msgstr "Statistics"
+
+#: caption.py:16
+msgid "TOP офферов"
+msgstr "TOP offers"
+
+#: caption.py:17
+msgid "Потоки"
+msgstr "Streams"
+
+#: caption.py:18
+msgid "Выплаты"
+msgstr "Payouts"
+
+#: caption.py:19
+msgid "Выход из аккаунта"
+msgstr "Logout"
+
+#: caption.py:23
+msgid "RUB"
+msgstr "RUB"
+
+#: caption.py:24
+msgid "USD"
+msgstr "USD"
+
+#: caption.py:27
+msgid "Оповещение о тикетах"
+msgstr "Ticket notification"
+
+#: caption.py:28
+msgid "О выплатах"
+msgstr "About payouts"
+
+#: caption.py:29
+msgid "Оповещение о новых лидах"
+msgstr "New lead"
+
+#: messages.py:4
+msgid "/cancel - отмена операции"
+msgstr "/cancel - cancel operation"
+
+#: messages.py:5
+msgid "Операция отменена"
+msgstr "Operation canceled"
+
+#: messages.py:6
+msgid "Произошла ошибка"
+msgstr "An error has occurred"
+
+#: messages.py:9
+msgid "Выберите из какого счет хотите вывести средства:"
+msgstr ""
+
+#: messages.py:10
+msgid "Выберите сумму или ее введите вручную:"
+msgstr ""
+
+#: messages.py:11
+msgid "Сумма не может быть меньше 0"
+msgstr ""
+
+#: messages.py:12
+msgid "Сумма не может быть больше вашего баланса!"
+msgstr ""
+
+#: messages.py:13
+msgid "Введена некорректная сумма!"
+msgstr ""
+
+#: messages.py:14
+msgid "Укажите кошелек на который выводить средства:"
+msgstr ""
+
+#: messages.py:15
+msgid "Введите данные кошелька:"
+msgstr ""
+
+#: messages.py:16
+msgid ""
+"\n"
+"    На ваш телефон было отправлено сообщение с кодом подтверждения, "
+"введите этот код\n"
+"    Отправка нового кода возможна через 50сек.\n"
+msgstr ""
+
+#: messages.py:20
+msgid "Код неверный, попробуйте еще раз"
+msgstr ""
+
+#: messages.py:21
+msgid "Если код подтверждения не пришел, можете отправить его еще раз"
+msgstr ""
+
+#: messages.py:22
+msgid "Запрос о выводе средств был отправлен менеджеру на обработку. Ожидайте!"
+msgstr ""
+
+#: messages.py:34
+msgid ""
+"\n"
+"        Проверьте правильность введенных данных:\n"
+"        \n"
+"        ---------------------------------\n"
+"        Сумма: {} {}\n"
+"        Кошелек: {} ({})\n"
+"        ----------------------------------\n"
+"        \n"
+"        Подтверждаете  вывод?\n"
+"    "
+msgstr ""
+
+#: messages.py:38
+msgid "С вашего кашелька будет списано {} {}"
+msgstr ""
+
+#: messages.py:44
+msgid "Напишите номер кошелька в формате: *{}*"
+msgstr ""
+
+#: messages.py:49
+msgid ""
+"\n"
+"    Введен некорректный номер кошелька!\n"
+"    {}\n"
+"    "
+msgstr ""
+
+#: handlers/client.py:15
+msgid "Вы не авторизированы!"
+msgstr "You are not authorized!"
+
+#: handlers/client.py:27
+msgid "Управление вашим аккаунтом"
+msgstr "Managing your account"
+
+#: handlers/client.py:34 handlers/client.py:73 handlers/client.py:118
+#: handlers/client.py:154 handlers/client.py:186 handlers/client.py:217
+msgid "Произошла ошибка"
+msgstr "An error has occurred"
+
+#: handlers/client.py:41
+msgid ""
+"\n"
+"Ваш баланс:\n"
+"{}: {}\n"
+"{}: {}\n"
+msgstr "Your balance"
+
+#: handlers/client.py:58
+msgid ""
+"\n"
+"*{}*\n"
+"\n"
+"{}\n"
+"\n"
+"_Дата: {}_\n"
+"            "
+msgstr ""
+
+#: handlers/client.py:68
+msgid "Показать еще"
+msgstr "Show more"
+
+#: handlers/client.py:77
+msgid "В какой валюте льешь траф?"
+msgstr "In what currency do you send traffic?"
+
+#: handlers/client.py:106
+msgid ""
+"\n"
+"Всего лидов: {}\n"
+"Валидные: {}\n"
+"В работе: {}\n"
+"Невалидные: {}\n"
+"Подтвержденные: {}\n"
+"Отклонено: {}\n"
+"\n"
+"Треш: {}\n"
+"В работе: {}\n"
+"Подтвержденные: {}\n"
+"Отклонено: {}\n"
+"Апрув: {}%\n"
+"\n"
+"Дата: {}\n"
+"            "
+msgstr ""
+
+#: handlers/client.py:116
+msgid "Нет данных"
+msgstr "No data"
+
+#: handlers/client.py:128
+msgid "Всего {} офферов!"
+msgstr "Total {} of offers!"
+
+#: handlers/client.py:138 handlers/client.py:173 handlers/client.py:205
+msgid "Показать еще ({})"
+msgstr "Show more ({})"
+
+#: handlers/client.py:147
+msgid ""
+"\n"
+"ID: {}\n"
+"Название: {}\n"
+"\n"
+"URL: https://cpagetti.com/offer/view/{}\n"
+"            "
+msgstr ""
+
+#: handlers/client.py:163
+msgid "Всего {} потоков!"
+msgstr "Total {} threads!"
+
+#: handlers/client.py:184
+msgid ""
+"\n"
+"Создан: {}\n"
+"Название: {}\n"
+"ID оффера: {}\n"
+"Имя оффера: {}\n"
+"URL: {}\n"
+"            "
+msgstr ""
+
+#: handlers/client.py:195
+msgid "Всего {} выплат!"
+msgstr "Total {} payouts!"
+
+#: handlers/client.py:213
+msgid ""
+"\n"
+"ID: {}\n"
+"Дата: {}\n"
+"Сумма: {} {}\n"
+"Статус: {}\n"
+"            "
+msgstr ""
+
+#: handlers/client.py:242
+msgid "Уведомлять меня о следующих событиях:"
+msgstr "Notify me of the following events:"
+
+#: handlers/client.py:270 handlers/client.py:310
+msgid "Произошла ошибка..."
+msgstr "An error has occurred..."
+
+#~ msgid ""
+#~ "👋 Hello {}. Я - твой помощник "
+#~ "Сэр Макарон 🧐. Здесь вы можете "
+#~ "управлять данными в своем кабинете!"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "👋 Hello. Я - твой помощник Сэр "
+#~ "Макарон 🧐. Здесь ты можешь управлять "
+#~ "данными в своем кабинете. Для того, "
+#~ "чтобы я мог тебе помочь, тебе "
+#~ "нужно осуществить вход по API токену "
+#~ "(возьми его у своего менеджера)."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "👋 Приветствую {}. Я - твой "
+#~ "помощник Сэр Макарон 🧐. Здесь вы "
+#~ "можете управлять данными в своем "
+#~ "кабинете!"
+#~ msgstr "Hello"
+
+#~ msgid ""
+#~ "👋 Приветствую. Я - твой помощник "
+#~ "Сэр Макарон 🧐. Здесь ты можешь "
+#~ "управлять данными в своем кабинете. Для"
+#~ " того, чтобы я мог тебе помочь, "
+#~ "тебе нужно осуществить вход по API "
+#~ "токену (возьми его у своего менеджера)."
+#~ msgstr "Hello"
+
