@@ -408,7 +408,7 @@ async def greetings(message: types.Message):
         token = await database.getTokenByTelegramId(message.from_user.id)
         profile = await api.checkToken(token)
         if profile is not None:
-            menu = await keyboards.get_main_menu(message.from_user.id)
+            menu = await keyboards.get_main_menu(message.from_user.id, locale='ru')
             await bot.send_message(message.from_user.id,
                                    "👋 Приветствую {}. Я - твой помощник Сэр Макарон 🧐. Здесь вы можете управлять данными в своем кабинете!".format(
                                        profile['firstName']), reply_markup=menu)
@@ -430,7 +430,7 @@ async def greetings_eng(message: types.Message):
         token = await database.getTokenByTelegramId(message.from_user.id)
         profile = await api.checkToken(token)
         if profile is not None:
-            menu = await keyboards.get_main_menu(message.from_user.id)
+            menu = await keyboards.get_main_menu(message.from_user.id, locale='en')
             await bot.send_message(message.from_user.id,
                                    "👋 Greetings {}. I am your assistant Sir Macaron 🧐. You can manage data in your account!".format(
                                        profile['firstName']), reply_markup=menu)
